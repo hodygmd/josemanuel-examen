@@ -18,8 +18,8 @@ function UsersLayout() {
     return (
         <>
             <div className={"d-flex justify-content-around"}>
-                <Link to="/users"><Button color={"warning"}>Alumns</Button></Link>
-                <Link to="/users/teachers"><Button color={"warning"}>Teachers</Button></Link>
+                <Link to="/users"><Button color={"warning"} outline>Alumns</Button></Link>
+                <Link to="/users/teachers"><Button color={"warning"} outline>Teachers</Button></Link>
             </div>
             <Outlet/>
         </>
@@ -106,17 +106,17 @@ function UsersAlumns() {
     return (
         <>
             <div className={"container"}>
-                <h2 className={"text-center mt-5"}>ALUMNS</h2>
+                <h2 className={"text-center mt-5 text-warning fw-bold text-decoration-underline"}>ALUMNS</h2>
                 <div className={"fondo"}>
                     <div className={"text-center py-4"}>
-                        <Button color={"primary"} outline onClick={() => handleShowModal()}>Add New</Button>
+                        <Button color={"info"} outline onClick={() => handleShowModal()}>Add New</Button>
                     </div>
                     <div>
                         {showModal &&
                             <Modal isOpen={showModal} toggle={() => handleShowModal()}>
                                 <form onSubmit={handleSubmit}>
-                                    <ModalHeader style={{backgroundColor: "#B39EB5"}}>ALUMN</ModalHeader>
-                                    <ModalBody style={{backgroundColor: "#CB99C9"}}>
+                                    <ModalHeader style={{backgroundColor: "#347094"}}>ALUMN</ModalHeader>
+                                    <ModalBody style={{backgroundColor: "#4e86a9"}}>
                                         <label>
                                             NC:<input className={"ms-3"} type={"number"} value={id}
                                                       onChange={handleIdChange} required/>
@@ -143,10 +143,9 @@ function UsersAlumns() {
                                         <br/><br/>
                                         <input type={"file"} accept={"image/*"} onChange={handleImageUpload}/>
                                     </ModalBody>
-                                    <ModalFooter style={{backgroundColor: "#B39EB5"}}>
-                                        <Button color={"success"} outline type={"submit"}>{buttonSubmitText}</Button>
-                                        <Button color={"danger"} outline
-                                                onClick={() => handleCloseModal()}>Cancel</Button>
+                                    <ModalFooter style={{backgroundColor: "#347094"}}>
+                                        <Button color={"success"} type={"submit"}>{buttonSubmitText}</Button>
+                                        <Button color={"danger"} onClick={() => handleCloseModal()}>Cancel</Button>
                                     </ModalFooter>
                                 </form>
                             </Modal>
@@ -155,7 +154,7 @@ function UsersAlumns() {
                     <div className={"mx-5 fondo-tabla border border-5 border-secondary rounded-5"}>
                         <Table className={"text-center table table-striped"}>
                             <thead>
-                            <tr className={"text-primary"}>
+                            <tr>
                                 <th>#</th>
                                 <th>NC</th>
                                 <th>NAME</th>
@@ -176,9 +175,9 @@ function UsersAlumns() {
                                         <td><img src={item.image} width={"200px"} height={"100px"}
                                                  className={"border border-4 border-secondary rounded-pill"}
                                                  alt={"uploaded"}/></td>
-                                        <td><Button color={"success"} outline
+                                        <td><Button color={"success"}
                                                     onClick={() => editElement(index)}>Edit</Button></td>
-                                        <td><Button color={"danger"} outline
+                                        <td><Button color={"danger"}
                                                     onClick={() => deleteElement(item.id)}>Delete</Button></td>
                                     </tr>
                                 ))
@@ -266,17 +265,17 @@ function UsersTeachers() {
     return (
         <>
             <div className={"container"}>
-                <h2 className={"text-center mt-5"}>TEACHERS</h2>
+                <h2 className={"text-center mt-5 text-warning fw-bold text-decoration-underline"}>TEACHERS</h2>
                 <div className={"fondo"}>
                     <div className={"text-center py-4"}>
-                        <Button color={"primary"} outline onClick={() => handleShowModal()}>Add New</Button>
+                        <Button color={"info"} outline onClick={() => handleShowModal()}>Add New</Button>
                     </div>
                     <div>
                         {showModal &&
                             <Modal isOpen={showModal} toggle={() => handleShowModal()}>
                                 <form onSubmit={handleSubmit}>
-                                    <ModalHeader style={{backgroundColor: "#B39EB5"}}>TEACHER</ModalHeader>
-                                    <ModalBody style={{backgroundColor: "#CB99C9"}}>
+                                    <ModalHeader style={{backgroundColor: "#347094"}}>TEACHER</ModalHeader>
+                                    <ModalBody style={{backgroundColor: "#4e86a9"}}>
                                         <label>
                                             Name:<input className={"ms-3"} type={"text"} value={name}
                                                         onChange={handleNameChange} required/>
@@ -298,10 +297,9 @@ function UsersTeachers() {
                                         <br/><br/>
                                         <input type={"file"} accept={"image/*"} onChange={handleImageUpload}/>
                                     </ModalBody>
-                                    <ModalFooter style={{backgroundColor: "#B39EB5"}}>
-                                        <Button color={"success"} outline type={"submit"}>{buttonSubmitText}</Button>
-                                        <Button color={"danger"} outline
-                                                onClick={() => handleCloseModal()}>Cancel</Button>
+                                    <ModalFooter style={{backgroundColor: "#347094"}}>
+                                        <Button color={"success"} type={"submit"}>{buttonSubmitText}</Button>
+                                        <Button color={"danger"} onClick={() => handleCloseModal()}>Cancel</Button>
                                     </ModalFooter>
                                 </form>
                             </Modal>
@@ -310,7 +308,7 @@ function UsersTeachers() {
                     <div className={"mx-5 fondo-tabla border border-5 border-secondary rounded-5"}>
                         <Table className={"text-center table table-striped"}>
                             <thead>
-                            <tr className={"text-primary"}>
+                            <tr>
                                 <th>#</th>
                                 <th>NAME</th>
                                 <th>CAREER</th>
@@ -329,9 +327,9 @@ function UsersTeachers() {
                                         <td><img src={item.image} width={"200px"} height={"100px"}
                                                  className={"border border-4 border-secondary rounded-pill"}
                                                  alt={"uploaded"}/></td>
-                                        <td><Button color={"success"} outline
+                                        <td><Button color={"success"}
                                                     onClick={() => editElement(index)}>Edit</Button></td>
-                                        <td><Button color={"danger"} outline
+                                        <td><Button color={"danger"}
                                                     onClick={() => deleteElement(item.name)}>Delete</Button></td>
                                     </tr>
                                 ))

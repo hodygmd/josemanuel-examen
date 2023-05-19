@@ -21,8 +21,8 @@ function SCLayout() {
     return (
         <>
             <div className={"d-flex justify-content-around"}>
-                <Link to="/sc"><Button color={"warning"}>Subjects</Button></Link>
-                <Link to="/sc/careers"><Button color={"warning"}>Careers</Button></Link>
+                <Link to="/sc"><Button color={"warning"} outline>Subjects</Button></Link>
+                <Link to="/sc/careers"><Button color={"warning"} outline>Careers</Button></Link>
             </div>
             <Outlet/>
         </>
@@ -116,17 +116,17 @@ function Subjects() {
     return (
         <>
             <div className={"container"}>
-                <h2 className={"text-center mt-5"}>SUBJECTS</h2>
-                <div className={"fondo"}>
+                <h2 className={"text-center mt-5 text-warning fw-bold text-decoration-underline"}>SUBJECTS</h2>
+                <div className={"info"}>
                     <div className={"text-center py-4"}>
-                        <Button color={"primary"} outline onClick={() => handleShowModal()}>Add New</Button>
+                        <Button color={"info"} outline onClick={() => handleShowModal()}>Add New</Button>
                     </div>
                     <div>
                         {showModal &&
                             <Modal isOpen={showModal} toggle={() => handleShowModal()}>
                                 <form onSubmit={handleSubmit}>
-                                    <ModalHeader style={{backgroundColor: "#B39EB5"}}>SUBJECT</ModalHeader>
-                                    <ModalBody style={{backgroundColor: "#CB99C9"}}>
+                                    <ModalHeader style={{backgroundColor: "#347094"}}>SUBJECT</ModalHeader>
+                                    <ModalBody style={{backgroundColor: "#4e86a9"}}>
                                         <label>
                                             Key:<input className={"ms-3"} type={"text"} value={key}
                                                        onChange={handleKeyChange} required/>
@@ -152,10 +152,9 @@ function Subjects() {
                                                                  onChange={handleCreditsChange} required/>
                                         </label>
                                     </ModalBody>
-                                    <ModalFooter style={{backgroundColor: "#B39EB5"}}>
-                                        <Button color={"success"} outline type={"submit"}>{buttonSubmitText}</Button>
-                                        <Button color={"danger"} outline
-                                                onClick={() => handleCloseModal()}>Cancel</Button>
+                                    <ModalFooter style={{backgroundColor: "#347094"}}>
+                                        <Button color={"success"} type={"submit"}>{buttonSubmitText}</Button>
+                                        <Button color={"danger"} onClick={() => handleCloseModal()}>Cancel</Button>
                                     </ModalFooter>
                                 </form>
                             </Modal>
@@ -164,7 +163,7 @@ function Subjects() {
                     <div className={"mx-5 fondo-tabla border border-5 border-secondary rounded-5"}>
                         <Table className={"text-center table table-striped"}>
                             <thead>
-                            <tr className={"text-primary"}>
+                            <tr>
                                 <th>#</th>
                                 <th>KEY</th>
                                 <th>NAME</th>
@@ -185,9 +184,9 @@ function Subjects() {
                                         <td>{item.thours}</td>
                                         <td>{item.phours}</td>
                                         <td>{item.credits}</td>
-                                        <td><Button color={"success"} outline
+                                        <td><Button color={"success"}
                                                     onClick={() => editElement(index)}>Edit</Button></td>
-                                        <td><Button color={"danger"} outline
+                                        <td><Button color={"danger"}
                                                     onClick={() => deleteElement(item.key)}>Delete</Button></td>
                                     </tr>
                                 ))
@@ -259,17 +258,17 @@ function Careers() {
     return (
         <>
             <div className={"container"}>
-                <h2 className={"text-center mt-5"}>CAREERS</h2>
+                <h2 className={"text-center mt-5 text-warning fw-bold text-decoration-underline"}>CAREERS</h2>
                 <div className={"fondo"}>
                     <div className={"text-center py-4"}>
-                        <Button color={"primary"} outline onClick={() => handleShowModal()}>Add New</Button>
+                        <Button color={"info"} outline onClick={() => handleShowModal()}>Add New</Button>
                     </div>
                     <div>
                         {showModal &&
                             <Modal isOpen={showModal} toggle={() => handleShowModal()}>
                                 <form onSubmit={handleSubmit}>
-                                    <ModalHeader style={{backgroundColor: "#B39EB5"}}>CARRER</ModalHeader>
-                                    <ModalBody style={{backgroundColor: "#CB99C9"}}>
+                                    <ModalHeader style={{backgroundColor: "#347094"}}>CARRER</ModalHeader>
+                                    <ModalBody style={{backgroundColor: "#4e86a9"}}>
                                         <label>
                                             Key:<input className={"ms-3"} type={"text"} value={key}
                                                        onChange={handleKeyChange} required/>
@@ -280,10 +279,9 @@ function Careers() {
                                                         onChange={handleNameChange} required/>
                                         </label>
                                     </ModalBody>
-                                    <ModalFooter style={{backgroundColor: "#B39EB5"}}>
-                                        <Button color={"success"} outline type={"submit"}>{buttonSubmitText}</Button>
-                                        <Button color={"danger"} outline
-                                                onClick={() => handleCloseModal()}>Cancel</Button>
+                                    <ModalFooter style={{backgroundColor: "#347094"}}>
+                                        <Button color={"success"} type={"submit"}>{buttonSubmitText}</Button>
+                                        <Button color={"danger"} onClick={() => handleCloseModal()}>Cancel</Button>
                                     </ModalFooter>
                                 </form>
                             </Modal>
@@ -292,7 +290,7 @@ function Careers() {
                     <div className={"mx-5 fondo-tabla border border-5 border-secondary rounded-5"}>
                         <Table className={"text-center table table-striped"}>
                             <thead>
-                            <tr className={"text-primary"}>
+                            <tr>
                                 <th>#</th>
                                 <th>KEY</th>
                                 <th>NAME</th>
@@ -307,9 +305,9 @@ function Careers() {
                                         <td>{index}</td>
                                         <td>{item.key}</td>
                                         <td>{item.name}</td>
-                                        <td><Button color={"success"} outline
+                                        <td><Button color={"success"}
                                                     onClick={() => editElement(index)}>Edit</Button></td>
-                                        <td><Button color={"danger"} outline
+                                        <td><Button color={"danger"}
                                                     onClick={() => deleteElement(item.key)}>Delete</Button></td>
                                     </tr>
                                 ))

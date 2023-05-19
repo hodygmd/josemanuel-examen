@@ -1,5 +1,7 @@
 .fondo-tabla{
-    background-color: #AEC6CF;
+    /*background-color: #AEC6CF;
+    background-color: #c0aecf;*/
+    background-color: rgba(145, 80, 199, 0.73);
     height: max-content;
 }
 /*.fondo{
