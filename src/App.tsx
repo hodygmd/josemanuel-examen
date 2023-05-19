@@ -12,7 +12,7 @@ import {
     NavLink,
 } from 'reactstrap';
 
-const About = React.lazy(() => import("./About"));
+const About = React.lazy(() => import("../public/About"));
 const Users = React.lazy(() => import("./Pages/Users"));
 const SubjectsCareers = React.lazy(() => import("./Pages/Subjects-Careers"));
 export default function App() {
