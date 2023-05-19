@@ -11,9 +11,9 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
-import Users from "./Pages/Users";
+
 const About = React.lazy(() => import("./Pages/About"));
-//const Users = React.lazy(() => import("./Pages/Users"));
+const Users = React.lazy(() => import("./Pages/Users"));
 const SubjectsCareers = React.lazy(() => import("./Pages/Subjects-Careers"));
 export default function App() {
     return (
