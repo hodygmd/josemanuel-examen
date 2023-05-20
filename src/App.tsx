@@ -67,16 +67,16 @@ function Layout() {
                     <Collapse isOpen={!collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <Link to="/">Home</Link>
+                                <Link to="/" className={"text-decoration-none text-info fw-semibold"}>Home</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/users">Alumns/Teachers</Link>
+                                <Link to="/users" className={"text-decoration-none text-info fw-semibold"}>Alumns/Teachers</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/sc">Subjects/Careers</Link>
+                                <Link to="/sc" className={"text-decoration-none text-info fw-semibold"}>Subjects/Careers</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/about">About</Link>
+                                <Link to="/about" className={"text-decoration-none text-info fw-semibold"}>About</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
