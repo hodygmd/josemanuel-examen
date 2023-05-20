@@ -9,7 +9,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
+    NavLink, Button,
 } from 'reactstrap';
 
 const About = React.lazy(() => import("./Pages/About"));
@@ -68,16 +68,16 @@ function Layout() {
                     <Collapse isOpen={!collapsed} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink className={"text-info fw-semibold"} href="/">Home</NavLink>
+                                <Link to="/">Home</Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink className={"text-info fw-semibold"} href="/users">Alumns/Teachers</NavLink>
+                                <Link to="/users">Alumns/Teachers</Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink className={"text-info fw-semibold"} href="/sc">Subjects/Careers</NavLink>
+                                <Link to="/sc">Subjects/Careers</Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink className={"text-info fw-semibold"} href="/about">About</NavLink>
+                                <Link to="/about">About</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
