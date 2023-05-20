@@ -8,8 +8,7 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink, Button,
+    NavItem
 } from 'reactstrap';
 
 const About = React.lazy(() => import("./Pages/About"));
